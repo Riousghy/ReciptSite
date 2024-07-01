@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Welcome{% endblock %}
+
+{% block content %}
+<h1>Welcome to My Recipe Site</h1>
+<p>Here you can use LLM to generate recipesa and discover the shared recipes below!</p>
+<ul>
+    {% for recipe in recipes %}
+    <li><a href="{% url 'recipe_detail' recipe.id %}">{{ recipe.name }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}

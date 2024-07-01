@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}All Recipes{% endblock %}
+
+{% block content %}
+<h1>All Recipes</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Ingredients</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for recipe in recipes %}
+        <tr>
+            <td><a href="{% url 'recipe_detail' recipe.id %}">{{ recipe.name }}</a></td>
+            <td>{{ recipe.ingredients }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Recipe Site{% endblock %}</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Great+Vibes">
+    <link rel="stylesheet" href="{% static 'recipes.css' %}">
+</head>
+<body>
+    <div class="site-title">
+        <h1>Recipe Site</h1>
+    </div>
+    <nav class="navbar">
+        <a href="{% url 'index' %}" class="nav-link">Home</a>
+        <a href="{% url 'create_recipe' %}" class="nav-link">Create Recipe</a>
+        <a href="{% url 'all_recipes' %}" class="nav-link">Recipes</a>
+    </nav>
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+    <footer>
+        <p>&copy; 2024 My Recipe Site. Created by Rious (yangguoh@yahoo.com) All rights reserved. </p>
+    </footer>
+</body>
+</html>
